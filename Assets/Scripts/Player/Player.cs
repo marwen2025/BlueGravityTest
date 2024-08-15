@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
@@ -7,7 +8,14 @@ using UnityEngine.EventSystems;
 public class Player : MonoBehaviour, IPlayer
 {
     public static Player Instance { get; private set; }
-    public float Health { get => _health; set => _health = value; }
+    public float Health
+    {
+        get => _health;
+        set
+        {
+            _health = value;
+        }
+    }
 
     [SerializeField] private float moveSpd = 7f;
     [SerializeField] private GameInput gameInput;

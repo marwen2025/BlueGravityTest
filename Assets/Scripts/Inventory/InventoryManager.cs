@@ -9,6 +9,7 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private Player _player;
     public Action<ItemInstance> OnItemAdded;
     public Action<ItemInstance> OnItemRemoved;
+    public Action OnItemUsed;
     [SerializeField] private DropLoot _dropLootPrefab;
 
     private void Awake()
@@ -58,7 +59,7 @@ public class InventoryManager : MonoBehaviour
         {
             return;
         }
-
+        OnItemUsed?.Invoke();
         itemFragment.UseItem(targetPlayer);
     }
 

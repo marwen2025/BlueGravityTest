@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e62a193764f8dfe4bad7174e71b029fa, type: 3}
   m_Name: HealthPotion_ItemDisplay
   m_EditorClassIdentifier: 
-  _itemDescription: sdsdsgfdhsdf
-  _image: {fileID: 21300000, guid: 1f072e0c729649a43b0498e90a41d610, type: 3}
+  _itemDescription: A simple potion that restores 20 HP. Perfect for quick recovery
+    in the heat of battle.
+  _image: {fileID: 21300000, guid: 98d4997b828a1944280a49b5db900c12, type: 3}

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e62a193764f8dfe4bad7174e71b029fa, type: 3}
-  m_Name: Weapon_ItemDisplay
+  m_Name: StrongHealthPotion_ItemDisplay
   m_EditorClassIdentifier: 
-  _itemDescription: "The Banana Gun is a quirky and fun weapon that looks like an
-    ordinary banana, but don\u2019t be fooled\u2014it packs a punch! "
-  _image: {fileID: 21300000, guid: 679246d965611614a91432bcec32b826, type: 3}
+  _itemDescription: A potent elixir that heals 50 HP. Ideal for those tough encounters
+    when you need an extra boost.
+  _image: {fileID: 21300000, guid: b65a4d4ab5b748d42a0f048baffbeaa6, type: 3}

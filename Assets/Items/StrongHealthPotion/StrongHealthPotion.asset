@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a717646d3553c064dac3ae72685246c9, type: 3}
-  m_Name: Bannna_DroppableItemFragment
+  m_Script: {fileID: 11500000, guid: b71b2c3f6b8bee34ab190d35c399fca6, type: 3}
+  m_Name: StrongHealthPotion
   m_EditorClassIdentifier: 
-  DroppedItemMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  _itemName: StrongHealthPotion
+  _itemFragments:
+  - {fileID: 11400000, guid: c3c3a353313209148afece1fc6fa69ad, type: 2}

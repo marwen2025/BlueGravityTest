@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class ItemPopup : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI _nameTextMeshPro;
     [SerializeField] private TextMeshProUGUI _descriptionText;
     [SerializeField] private Image _itemImage;
     [SerializeField] private Button _useButton;
@@ -36,7 +37,7 @@ public class ItemPopup : MonoBehaviour
         var itemFragment = itemInstance.ItemDefinition.FindItemFragment<ItemDisplay_ItemFragment>();
         _descriptionText.text = itemFragment.ItemDescription;
         _itemImage.sprite = itemFragment.Image;
-
+        _nameTextMeshPro.text = itemInstance.ItemDefinition.ItemName;
         // Clear previous listeners
         _dropButton.onClick.RemoveAllListeners();
         _useButton.onClick.RemoveAllListeners();

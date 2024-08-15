@@ -42,7 +42,9 @@ public class InventoryUIManager : MonoBehaviour
                 ItemUI = itemUI
             };
 
-            itemUI.GetComponent<Image>().sprite = itemDisplay.Image;
+            // Find the child Image component within the itemUI prefab and set its sprite
+            itemUI.transform.Find("ItemSprite").GetComponent<Image>().sprite = itemDisplay.Image;
+
             _inventoryItems.Add(inventoryItem);
 
             // Attach the ShowPopup method to the button's onClick event
