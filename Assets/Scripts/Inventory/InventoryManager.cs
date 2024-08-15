@@ -9,6 +9,7 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private Player _player;
     public Action<ItemInstance> OnItemAdded;
     public Action<ItemInstance> OnItemRemoved;
+    [SerializeField] private DropLoot _dropLootPrefab;
 
     private void Awake()
     {
@@ -46,7 +47,10 @@ public class InventoryManager : MonoBehaviour
     }
 
     #endregion
-
+    public void UseItemOnSelf(ItemInstance itemInstance)
+    {
+        UseItem(itemInstance.ItemDefinition, _player);
+    }
     public void UseItem(ItemDefinition itemDefinition, IPlayer targetPlayer)
     {
         ConsumableItem_Fragment itemFragment = itemDefinition.FindItemFragment<ConsumableItem_Fragment>();
@@ -67,7 +71,6 @@ public class InventoryManager : MonoBehaviour
                 return item;
             }
         }
-
         return null;
     }
 
@@ -80,5 +83,11 @@ public class InventoryManager : MonoBehaviour
         }
 
         return new ItemInstance(itemDefinition);
+    }
+    public void DropItem(ItemInstance itemInstance)
+    {
+        var dropLoot = Instantiate(_dropLootPrefab, this.gameObject.transform.position, Quaternion.identity);
+        dropLoot.Initialize(itemInstance.ItemDefinition);
+        RemoveItem(itemInstance);
     }
 }

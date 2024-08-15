@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+
 public class InventoryUIManager : MonoBehaviour
 {
 
@@ -61,25 +63,7 @@ public class InventoryUIManager : MonoBehaviour
 
             // Remove the item from the inventory list
             _inventoryItems.Remove(inventoryItem);
-        }
-    }
 
-    // Method to delete an item from the inventory
-    public void DeleteItem(ItemInstance item)
-    {
-        // Find the item in the list
-        var inventoryItem = _inventoryItems.Find(i => i.ItemInstance == item);
-        if (inventoryItem.ItemUI != null)
-        {
-            // Remove the item from the inventory
-            _inventoryManager.RemoveItem(item); // Assuming your InventoryManager has a method for this
-
-            // Deactivate the UI element and add it back to the pool
-            inventoryItem.ItemUI.SetActive(false);
-            _uiPool.Enqueue(inventoryItem.ItemUI);
-
-            // Remove the item from the inventory list
-            _inventoryItems.Remove(inventoryItem);
         }
     }
 
@@ -91,4 +75,5 @@ public struct InventoryItem
     public ItemInstance ItemInstance;
     public GameObject ItemUI;
 }
+
 

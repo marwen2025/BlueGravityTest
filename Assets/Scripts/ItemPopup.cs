@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,7 +9,9 @@ public class ItemPopup : MonoBehaviour
     [SerializeField] private Image _itemImage;
     [SerializeField] private Button _useButton;
     [SerializeField] private Button _cancelButton;
-
+    [SerializeField] private Button _dropButton;
+    [SerializeField] private InventoryManager _inventoryManager;
+    public Action OnItemUsed;
     private void Awake()
     {
         // Ensure the popup is initially hidden
@@ -17,12 +20,24 @@ public class ItemPopup : MonoBehaviour
 
     public void ShowPopup(ItemInstance itemInstance)
     {
+        if (itemInstance != null)
+        {
+            if (itemInstance.ItemDefinition.FindItemFragment<Weapon_ItemFragment>() != null)
+            {
+                _useButton.gameObject.SetActive(false);
+            }
+            else
+            {
+                _useButton.gameObject.SetActive(true);
+            }
+        }
         // Set the item description and image
         var itemFragment = itemInstance.ItemDefinition.FindItemFragment<ItemDisplay_ItemFragment>();
         _descriptionText.text = itemFragment.ItemDescription;
         _itemImage.sprite = itemFragment.Image;
 
         // Clear previous listeners
+        _dropButton.onClick.RemoveAllListeners();
         _useButton.onClick.RemoveAllListeners();
         _cancelButton.onClick.RemoveAllListeners();
 
@@ -30,10 +45,15 @@ public class ItemPopup : MonoBehaviour
         _useButton.onClick.AddListener(() =>
         {
             // Implement the use item logic here
-            // UseItem(inventoryItem);
+            UseItem(itemInstance);
+            _inventoryManager.RemoveItem(itemInstance.ItemDefinition);
             gameObject.SetActive(false); // Close the popup
         });
 
+        _dropButton.onClick.AddListener(() =>
+        {
+            _inventoryManager.DropItem(itemInstance);
+        });
         // Set up the Cancel button
         _cancelButton.onClick.AddListener(() =>
         {
@@ -43,4 +63,13 @@ public class ItemPopup : MonoBehaviour
         // Show the popup
         gameObject.SetActive(true);
     }
+    private void UseItem(ItemInstance itemInstance)
+    {
+
+        _inventoryManager.UseItemOnSelf(itemInstance);
+
+
+    }
+    // Hnadling Using Health Potion 
+
 }
