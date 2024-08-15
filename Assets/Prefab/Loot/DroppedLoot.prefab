@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5239883785607048537}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 5.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -146,6 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdebadb6c59a3834685b222d11d3aa2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemDefinition: {fileID: 0}
+  _itemDefinition: {fileID: 11400000, guid: 726dd1dce3b092548b25f3331c19745a, type: 2}
   rb: {fileID: 7951504891770696826}
-  _forcePower: {x: 0, y: 0, z: 0}
+  meshFilter: {fileID: 6808039678411288503}
+  _forcePower: {x: 0.5, y: 0.5, z: 0}
+  _canDetectCollision: 0

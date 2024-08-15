@@ -28,7 +28,7 @@ public class Gun : MonoBehaviour
 
     private void GameInput_OnFireAction(object sender, EventArgs e)
     {
-        Debug.Log("Key Shoot pressed");
+        //Debug.Log("Key Shoot pressed");
         Shoot();
     }
 

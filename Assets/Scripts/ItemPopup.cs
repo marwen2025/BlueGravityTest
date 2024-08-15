@@ -1,5 +1,6 @@
 using System;
 using TMPro;
+using Unity.Properties;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -44,7 +45,7 @@ public class ItemPopup : MonoBehaviour
         // Set up the Use button
         _useButton.onClick.AddListener(() =>
         {
-            // Implement the use item logic here
+
             UseItem(itemInstance);
             _inventoryManager.RemoveItem(itemInstance.ItemDefinition);
             gameObject.SetActive(false); // Close the popup
@@ -53,11 +54,12 @@ public class ItemPopup : MonoBehaviour
         _dropButton.onClick.AddListener(() =>
         {
             _inventoryManager.DropItem(itemInstance);
+            gameObject.SetActive(false); // Close the popup
         });
         // Set up the Cancel button
         _cancelButton.onClick.AddListener(() =>
         {
-            gameObject.SetActive(false); // Close the popup without using the item
+            gameObject.SetActive(false); // Close the popup 
         });
 
         // Show the popup

@@ -86,7 +86,9 @@ public class InventoryManager : MonoBehaviour
     }
     public void DropItem(ItemInstance itemInstance)
     {
-        var dropLoot = Instantiate(_dropLootPrefab, this.gameObject.transform.position, Quaternion.identity);
+        Vector3 SpawnPosition = this.gameObject.transform.position;
+        SpawnPosition.x += 2;
+        var dropLoot = Instantiate(_dropLootPrefab, SpawnPosition, Quaternion.identity);
         dropLoot.Initialize(itemInstance.ItemDefinition);
         RemoveItem(itemInstance);
     }
