@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e62a193764f8dfe4bad7174e71b029fa, type: 3}
   m_Name: Weapon_ItemDisplay
   m_EditorClassIdentifier: 
-  _itemDescription: sdsdsdsdsd
+  _itemDescription: "The Banana Gun is a quirky and fun weapon that looks like an
+    ordinary banana, but don\u2019t be fooled\u2014it packs a punch! When fired,
+    it launches banana peels at high velocity, causing slippery chaos for anyone
+    in its path. Ideal for quick, humorous battles, the Banana Gun is sure to bring
+    a smile to your face as you watch your enemies slip and slide!"
   _image: {fileID: 21300000, guid: 1f072e0c729649a43b0498e90a41d610, type: 3}

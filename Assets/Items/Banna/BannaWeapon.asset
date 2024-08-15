@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b71b2c3f6b8bee34ab190d35c399fca6, type: 3}
   m_Name: BannaWeapon
   m_EditorClassIdentifier: 
-  _itemName: Gun
+  _itemName: BananaGun
   _itemFragments:
   - {fileID: 11400000, guid: ec87853ef29ebce468aec349fab3dabb, type: 2}
   - {fileID: 11400000, guid: 1e0bb77df7f87854e95f00899142dd1c, type: 2}

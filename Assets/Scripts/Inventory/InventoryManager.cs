@@ -8,7 +8,7 @@ public class InventoryManager : MonoBehaviour
     public List<ItemInstance> InventoryItems { get; private set; }
     [SerializeField] private Player _player;
     public Action<ItemInstance> OnItemAdded;
-    public Action<ItemInstance> OnItemRemove;
+    public Action<ItemInstance> OnItemRemoved;
 
     private void Awake()
     {
@@ -40,7 +40,7 @@ public class InventoryManager : MonoBehaviour
         }
 
         itemInstance.OnItemRemoved();
-        OnItemRemove?.Invoke(itemInstance);
+        OnItemRemoved?.Invoke(itemInstance);
         InventoryItems.Remove(itemInstance);
 
     }
