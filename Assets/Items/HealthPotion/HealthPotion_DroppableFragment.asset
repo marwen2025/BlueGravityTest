@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a717646d3553c064dac3ae72685246c9, type: 3}
   m_Name: HealthPotion_DroppableFragment
   m_EditorClassIdentifier: 
-  DroppedItemMesh: {fileID: 0}
+  DroppedItemMesh: {fileID: -2044164139325050048, guid: b2bd321d9d4d86f4abfd6229b2605d1d, type: 3}

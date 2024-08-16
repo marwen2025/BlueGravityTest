@@ -3,26 +3,27 @@ using UnityEngine;
 
 public class ObjectPooler : MonoBehaviour
 {
-    public GameObject bulletPrefab;
-    public int poolSize = 20;
-    private Queue<GameObject> bulletPool;
+    [SerializeField] private Transform _bulletsTransform;
+    [SerializeField] private GameObject _bulletPrefab;
+    [SerializeField] private int _poolSize = 20;
+    private Queue<GameObject> _bulletPool;
 
     void Start()
     {
-        bulletPool = new Queue<GameObject>();
+        _bulletPool = new Queue<GameObject>();
 
-        for (int i = 0; i < poolSize; i++)
+        for (int i = 0; i < _poolSize; i++)
         {
-            GameObject bullet = Instantiate(bulletPrefab);
+            GameObject bullet = Instantiate(_bulletPrefab, _bulletsTransform);
             bullet.SetActive(false);
-            bulletPool.Enqueue(bullet);
+            _bulletPool.Enqueue(bullet);
         }
     }
 
     public GameObject GetPooledBullet()
     {
         // Reuse the oldest bullet in the pool
-        GameObject bullet = bulletPool.Dequeue();
+        GameObject bullet = _bulletPool.Dequeue();
 
         // If the bullet is still active, you might want to reset its position and other properties here
         if (bullet.activeInHierarchy)
@@ -31,7 +32,7 @@ public class ObjectPooler : MonoBehaviour
         }
 
         // Add it back to the pool after retrieving it
-        bulletPool.Enqueue(bullet);
+        _bulletPool.Enqueue(bullet);
 
         return bullet;
     }

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a717646d3553c064dac3ae72685246c9, type: 3}
   m_Name: Bannna_DroppableItemFragment
   m_EditorClassIdentifier: 
-  DroppedItemMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  DroppedItemMesh: {fileID: 8905252361550948797, guid: 38373e16bfc1c5a4085a26440a7a0cb2, type: 3}

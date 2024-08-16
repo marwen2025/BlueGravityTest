@@ -8,24 +8,22 @@ public class DropLoot : MonoBehaviour
     [SerializeField] private ItemDefinition _itemDefinition;
     [SerializeField] private Rigidbody rb;
     [SerializeField] private MeshFilter meshFilter;
-    [SerializeField] private Vector3 _forcePower;
+    //[SerializeField] private Vector3 _forcePower;
     [SerializeField] private bool _canDetectCollision = false;
     public void Initialize(ItemDefinition itemDefinition)
     {
         _itemDefinition = itemDefinition;
         SetItem();
-        StartCoroutine(AddForceOverTime());
+        StartCoroutine(ItemDropColdown());
+
     }
     private void Start()
     {
         SetItem();
-        //StartCoroutine(AddForceOverTime());
     }
-    private IEnumerator AddForceOverTime()
+    private IEnumerator ItemDropColdown()
     {
-        Vector3 force = this.transform.position;
-        force += _forcePower;
-        rb.AddForce(force, ForceMode.Impulse);
+
         yield return new WaitForSeconds(0.2f);
         _canDetectCollision = true;
     }
@@ -44,11 +42,18 @@ public class DropLoot : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (!_canDetectCollision)
-            return;
 
-        var inventoryManager = collision.gameObject.GetComponentInParent<InventoryManager>();
-        Debug.Log($"collinsion Enter {collision.gameObject.name}");
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!_canDetectCollision)
+        {
+            Debug.Log("Connot detect Collision");
+            return;
+        }
+
+        var inventoryManager = other.gameObject.GetComponentInParent<InventoryManager>();
+        Debug.Log($"collinsion Enter {other.gameObject.name}");
         //Debug.Log(inventoryManager.gameObject.name);
         if (inventoryManager != null)
         {

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Weapon_ItemDisplay
   m_EditorClassIdentifier: 
   _itemDescription: "The Banana Gun is a quirky and fun weapon that looks like an
-    ordinary banana, but don\u2019t be fooled\u2014it packs a punch! "
+    ordinary banana, but don\u2019t be fooled\u2014it fires tomatoes !! "
   _image: {fileID: 21300000, guid: 679246d965611614a91432bcec32b826, type: 3}

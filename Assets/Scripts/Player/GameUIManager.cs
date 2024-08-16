@@ -10,7 +10,7 @@ public class HealthUIManager : MonoBehaviour
 
     private void Start()
     {
-        _healthText.text = $"Health: {_player.Health.ToString()}";
+        _healthText.text = $"Health: {_player.Health}";
     }
     private void OnEnable()
     {
@@ -24,6 +24,6 @@ public class HealthUIManager : MonoBehaviour
 
     private void UpdateHealthUI()
     {
-        _healthText.text = $"Health: {_player.Health.ToString()}";
+        _healthText.text = $"Health: {_player.Health}";
     }
 }

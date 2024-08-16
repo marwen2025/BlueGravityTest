@@ -59,8 +59,8 @@ public class InventoryManager : MonoBehaviour
         {
             return;
         }
-        OnItemUsed?.Invoke();
         itemFragment.UseItem(targetPlayer);
+        OnItemUsed?.Invoke();
     }
 
     public ItemInstance GetItemInstanceByDefinition(ItemDefinition itemDefinition)
